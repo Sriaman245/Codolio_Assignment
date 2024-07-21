@@ -1,0 +1,365 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  width:900px;
+  margin:0px auto;
+  background-color: #f5efef;
+  color: #000;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem;
+  /* background-color: #333; */
+  color: #fff;
+}
+
+header button {
+  padding: 0.5rem 1rem;
+  background-color: #444;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+header button:hover {
+  background-color: #555;
+}
+
+main {
+  padding:0px 20px;
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.form-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width:100%;
+  /* margin: 0px auto; */
+  height: 100%;
+  z-index: 9;
+  transform: scale(0.8);
+  transition: opacity 0.7s ease;
+
+}
+
+label {
+  margin: 0.5rem 0 0.2rem;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+input,
+select,
+textarea,
+button {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+input,
+select,
+textarea {
+  display: flex;
+  border: 1px solid rgb(239, 239, 239);
+  background-color: rgb(239, 239, 239);
+  border-radius: 4px;
+}
+
+button {
+  background-color: #e70000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #a90101;
+}
+
+
+body.dark-mode {
+  background-color: #1a202c;
+  color: #fff;
+}
+
+body.dark-mode header {
+  background-color: #444;
+}
+
+body.dark-mode header button {
+  background-color: #555;
+}
+
+body.dark-mode header button:hover {
+  background-color: #666;
+}
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+  background-color: #333;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+body.dark-mode button {
+  background-color: #444;
+}
+
+body.dark-mode button:hover {
+  background-color: #333;
+}
+
+body.dark-mode .transaction-box {
+  border: 1px solid #555;
+}
+
+.tab {
+  overflow: hidden;
+  display: flex;
+  width:max-content;
+  margin:0px auto;
+}
+
+.tab .income button {
+  width:100%;
+  border-radius: 10px 0px 0px 0px;
+  color: black;
+  font-weight: bold;
+  background-color: #ddd;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+.tab .expense button {
+  border-radius: 0px 0px 0px 10px;
+  border-radius: 0px 10px 0px 0px;
+  color: black;
+  font-weight: bold;
+  background-color: #ddd;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+.tab .income button:hover {
+  background-color: rgba(0, 220, 0, 0.519);
+}
+
+.tab .expense button:hover {
+  background-color: rgba(255, 0, 0, 0.564);
+}
+
+.tab .income button.active {
+  background-color: rgba(0, 220, 0, 0.519);
+}
+
+.tab .expense button.active {
+  background-color: rgba(255, 0, 0, 0.564);
+}
+
+.tabcontent {
+  display: none;
+  background-color: rgb(255, 255, 255);
+  border-top: none;
+  border-radius: 10px;
+}
+
+#Income {
+  display: block;
+}
+#openFormBtn{
+  position:fixed;
+  height:60px;
+  width:60px;
+  font-size: 30px;
+  right:50px;
+  bottom: 50px;
+  border:none;
+  border-radius: 50%;
+}
+.transaction-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.transaction-item .innerHTML {
+  display: flex;
+}
+
+.transaction-item .amt {
+  align-items: flex-end;
+}
+
+.die{
+  padding:10px;
+  font-weight: bold;
+ background-color: rgb(255, 255, 255);
+ border-radius:7px 7px 0px 0px;
+}
+.die #in{
+  margin:0px 20px;
+  color:green;
+
+}
+.die #ex{
+  margin:0px 20px;
+  color:red;
+
+}
+.transaction-box {
+  border-radius: 0px 0px 7px 7px;
+}
+
+.transaction-item span{
+  margin:10px;
+}
+
+.transaction-item.food {
+  background-color: rgb(0, 215, 79);
+  /* color: white; */
+  border-radius:0px 0px 7px 7px;
+}
+
+.transaction-item.transport {
+  background-color: rgb(255, 213, 0);
+  color: black;
+  border-radius:0px 0px 7px 7px;
+}
+
+.transaction-item.gift {
+  background-color: orange;
+  /* color: white; */
+  border-radius:0px 0px 7px 7px;
+}
+
+.transaction-item.bills {
+  background-color: rgb(255, 71, 101);
+  color: black;
+  border-radius:0px 0px 7px 7px;
+}
+
+.transaction-item.education {
+  background-color: rgb(0, 187, 216);
+  /* color: white; */
+  border-radius:0px 0px 7px 7px;
+}
+
+.transaction-item.bonus {
+  background-color: yellow;
+  color: black;
+  border-radius:0px 0px 7px 7px;
+}
+
+.transaction-item.salary {
+  background-color: orange;
+  color: black;
+  border-radius:0px 0px 7px 7px;
+}
+.transaction-date {
+  display: block;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+  padding: 1rem 0;
+}
+.transaction-date h3 {
+  margin: 0;
+}
+
+.totals {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.totals p {
+  margin: 0;
+}
+
+#totalSummary{
+  width: 100%;
+  text-align: center;
+}
+
+#ti{
+  color:rgb(0, 191, 0);
+  background-color: rgba(0, 205, 0, 0.4);
+  padding:15px;
+  font-weight: bold;
+  border-radius:10px;
+  margin:5px;
+}
+
+#te{
+  color:rgb(213, 0, 0);
+  background-color: rgba(205, 0, 0, 0.4);
+  padding:15px;
+  font-weight: bold;
+  border-radius:10px;
+  margin: 5px;
+}
+
+.totalContainer{
+  display:flex;
+  width:500px;
+  margin:50px auto;
+}
+#chartsContainer{
+  width:300px;
+
+}
+
+#totalSummary{
+  margin-top:40px;
+}
+#monthNavigation{
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  border-radius:7px ;
+}
+#prevMonthBtn{
+  margin: 5px 50px;
+  color:black;
+  font-size: 20px;
+  font-weight: bold;
+  background-color:white;
+}
+#nextMonthBtn{
+  margin: 5px 50px;
+  color:black;
+  font-size: 20px;
+  font-weight: bold;
+  background-color:white;
+}
+#currentMonthDisplay{
+  margin:15px 50px;
+  font-weight: bold;
+}
+
+

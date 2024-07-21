@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transaction Manager</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" media="screen and (max-width:1147px)"  href="phone.css">
+
+</head>
+
+<body class="light-mode">
+  <header>
+    <button id="themeSwitcher">Switch to Dark Theme</button>
+  </header>
+
+  <main>
+    <section id="transactionForm">
+      <div id="formPopup" class="form-popup">
+      <div id="Income" class="tabcontent">
+        <div class="tab">
+          <div class="income">
+            <button class="tablinks active" onclick="openTab(event, 'Income')">INCOME</button>
+          </div>
+          <div class="expense">
+            <button class="tablinks" onclick="openTab(event, 'Expense')">EXPENSE</button>
+          </div>
+        </div>
+        
+        <form id="incomeForm">
+            <label for="incomeDate">Date:</label>
+            <input type="date" id="incomeDate" required>
+            <label for="incomeAmount">Amount:</label>
+            <input type="number" id="incomeAmount" required>
+            <label for="incomeCategory">Category:</label>
+          <select id="incomeCategory" required>
+            <option value="salary">Salary</option>
+            <option value="bonus">Bonus</option>
+          </select>
+            <label for="incomeTitle">Title:</label>
+          <input type="text" id="incomeTitle" required>
+          
+          <label for="incomeNote">Notes:</label>
+          <textarea id="incomeNote"></textarea>
+
+          <button type="submit">Save</button>
+          <button type="button" class="btn cancel" id="closeFormBtn">Close</button>
+        </form>
+      </div>
+
+      <div id="Expense" class="tabcontent">
+        <div class="tab">
+          <div class="income">
+            <button class="tablinks active" onclick="openTab(event, 'Income')">INCOME</button>
+          </div>
+          <div class="expense">
+            <button class="tablinks" onclick="openTab(event, 'Expense')">EXPENSE</button>
+          </div>
+        </div>
+        <form id="expenseForm">
+         
+          <label for="expenseDate">Date:</label>
+          <input type="date" id="expenseDate" required>
+
+          <label for="expenseAmount">Amount:</label>
+          <input type="number" id="expenseAmount" required>
+
+          <label for="expenseCategory">Category:</label>
+          <select id="expenseCategory" required>
+            <option value="transport">Transport</option>
+            <option value="food">Food</option>
+            <option value="education">Education</option>
+            <option value="gift">Gift</option>
+            <option value="bills">Bills</option>
+          </select>
+
+          <label for="expenseTitle">Title:</label>
+          <input type="text" id="expenseTitle" required>
+
+          <label for="expenseNote">Notes:</label>
+          <textarea id="expenseNote"></textarea>
+          <button type="submit">Save</button>
+          <button type="button" class="btn cancel" id="closeFormBtn">Close</button>
+        </form>
+      </div>
+      </div>
+    </section>
+
+    <section id="transactionList">
+      <div id="monthNavigation">
+        <button id="prevMonthBtn"><</button>
+        <span id="currentMonthDisplay"></span>
+        <button id="nextMonthBtn">></button>
+      </div>
+      <h2>Transactions</h2>
+      <div class="totalContainer">
+        <div class="container1">
+          <div id="chartsContainer">
+            <canvas id="incomeChart"></canvas>
+            <div id="totalSummary">
+              <span id="ti">Total Income: $<span id="totalIncomeDisplay">0.00</span></span>
+            </div>
+          </div>
+        </div>
+        <div class="container2">
+          <div id="chartsContainer">
+            <canvas id="expenseChart"></canvas>
+          </div>
+          <div id="totalSummary">
+            <span id="te">Total Expense: $<span id="totalExpensesDisplay">0.00</span></span>
+          </div>
+        </div>
+      </div>
+  
+      <div id="transactions">
+      </div>
+    </section>
+    <button id="openFormBtn" class="plus-button">+</button>
+  </main>
+  <script src="app.js"></script>
+</body>
+
+</html>
